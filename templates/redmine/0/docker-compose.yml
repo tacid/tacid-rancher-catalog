@@ -27,8 +27,9 @@ services:
   db:
     restart: always
     image: mariadb:10.2
+    driver: ${VOLUME_DRIVER}
     volumes:
-    - redminedbdata:/var/lib/mysql:z
+    - redminedbdata:/var/lib/mysql:Z
     labels:
       io.rancher.container.pull_image: always
     environment:
